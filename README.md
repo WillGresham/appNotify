@@ -1,7 +1,11 @@
 appNotify
 =========
-
 appNotify is a simple javascript library which will add a non-obtrusive banner to the top of a webpage when browsing on a mobile device to alery the user to an available platform-specific app.
+Created by [@willgresham](http://twiter.com/willgresham)
+
+Demo
+====
+Demo available at [willgresham.me](http://willgresham.me/appNotify).
 
 Usage
 =====
