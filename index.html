@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Simple Platform-Specific App Notification, Will Gresham</title>
+	<script src='./src/appNotify.min.js'></script>
+	<style>
+	body {
+		margin: 0;
+	}
+
+	.content {
+		margin-left: 5px;
+	}
+	</style>
+</head>
+<body>
+	<div class='content'>
+		<h1>appNotify</h1>
+
+		appNotify is a simple javascript library which will add a non-obtrusive banner to the top of a webpage when browsing on a mobile device to alery the user to an available platform-specific app.
+
+		<h1>Usage</h1>
+		To get going you will need to specify at least 1 link to an app, and preferably include an app icon too.
+		
+		<h2>Add iOS link</h2>
+		appNotify.setIOSLink('http://link');
+
+		<h2>Add Android link</h2>
+		appNotify.setAndroudLink('http://link');
+
+		<h2>Add BlackBerry link</h2>
+		appNotify.setBlackberryLink('http://link');
+
+		<h2>Add Windows Mobile link</h2>
+		appNotify.setWindowsPhoneLink('http://link');
+
+		<h2>Add App Icon</h2>
+		appNotify.setImage('/relative/image/link.png');
+
+		<h2>Prevent the banner showing</h2>
+		appnotify.alwaysHide();
+
+		<h2>Alter the text displayed next to the icon</h2>
+		appNotify.setTitle('Text');
+
+		<h2>Show the banner</h2>
+		appNotify.init();
+	</div>
+	<script>
+	appNotify.setIOSLink('https://itunes.apple.com/');
+	appNotify.setAndroidLink('https://play.google.com/');
+	appNotify.setBlackberryLink('http://appworld.blackberry.com/');
+	appNotify.setWindowsPhoneLink('http://www.windowsphone.com/');
+	appNotify.setImage('icon.png');
+	appNotify.init();
+	</script>
+</body>
+
+</html>
