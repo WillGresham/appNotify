@@ -7,6 +7,14 @@ Demo
 ====
 Demo available at [willgresham.me](http://willgresham.me/appNotify).
 
+Styling
+=======
+Style the banner and child elements with the following class definitions:
+`appNotify-banner` - Banner
+`appNotify-p` - Banner Content
+`appNotify-p a` - Links on Banner
+`appNotify-appIcon` - Image on Banner
+
 Usage
 =====
 To get going you will need to specify at least 1 link to an app, and preferably include an app icon too.

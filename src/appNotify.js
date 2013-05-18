@@ -17,6 +17,7 @@ var appNotify = {
 	titleText : 'We have a mobile app!',
 
 	init : function() {
+			console.log('here');
 		// Yes, this is pretty horrible.
 		if(this.isIDevice()) {
 			if(this.iOSLink == '') {
@@ -53,6 +54,7 @@ var appNotify = {
 		this.drawBanner(this.useLink);
 	},
 
+	// Functions which check on the userAgent string to determine the OS. Not ideal
 	isIDevice : function() {
 		return (/iPhone|iPad|iPod/).test(navigator.userAgent);
 	},
@@ -69,6 +71,8 @@ var appNotify = {
 		return (/Windows Phone/).test(navigator.userAgent);
 	},
 
+	// Check if the banner has been dismissed (Either permanently, or for the session)
+	// Also check if the install link was clicked.
 	checkForCookie : function() {
 		if(this.selectedOption === false) {
 			if(document.cookie.match(/appNotify-seen=1/)) {
@@ -79,10 +83,12 @@ var appNotify = {
 		}
 	}, 
 
+	// Prevent banner
 	alwaysHide : function() {
 		this.showBanner = false;
 	},
 
+	// Set attributes
 	setImage : function(imageUrl) {
 		this.image = imageUrl;
 	},
@@ -107,6 +113,7 @@ var appNotify = {
 		this.bbLink = link;
 	},
 
+	// Handle a click on any of the links on the banner
 	click : function(what) {
 		// 1 = Hide for now
 		// 0 = Hide in the future
@@ -118,6 +125,7 @@ var appNotify = {
 		window.location.reload();
 	},
 
+	// Function to draw the banner
 	drawBanner : function(link) {
 		var wrapperDiv, wrapperP, imageHolder, titleText, acceptLink, dismissLink, hideLink, br;
 
@@ -153,13 +161,13 @@ var appNotify = {
 			imageHolder = document.createElement('img');
 			imageHolder.setAttribute('src', this.image);
 			imageHolder.setAttribute('alt', 'App Icon');
-			imageHolder.setAttribute('style', 'float: left; vertical-align: middle');
+			imageHolder.setAttribute('class', 'appNotify-appIcon');
 			wrapperP.appendChild(imageHolder);
 		}
 
 		// Add the banner to the page
-		wrapperDiv.setAttribute('style', 'display: block; background-color: #d5e8f3; padding: 0.5em 0');
-		wrapperP.setAttribute('style', 'width: 100%; padding: 0; margin: 0; display: inline-block; font-size: 1.2em;');
+		wrapperDiv.setAttribute('class', 'appNotify-banner');
+		wrapperP.setAttribute('class', 'appNotify-p');
 		// Add the text to the p
 		wrapperP.appendChild(titleText);
 		wrapperP.appendChild(br);
@@ -176,6 +184,5 @@ var appNotify = {
 		wrapperDiv.appendChild(wrapperP);
 		// Add the banner to the page
 		document.body.insertBefore(wrapperDiv, document.body.childNodes[0]);
-	}
-	
+	}	
 };

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Simple Platform-Specific App Notification, Will Gresham</title>
-	<script src='./src/appNotify.min.js'></script>
+	<script src='./src/appNotify.js'></script>
 	<style>
 	body {
 		margin: 0;
@@ -12,6 +12,39 @@
 	.content {
 		margin-left: 5px;
 	}
+
+	.appNotify-banner {
+		display: block; 
+		background-color: #d5e8f3; 
+		padding: 0.5em 0
+	}
+
+	.appNotify-p {
+		width: 100%; 
+		padding: 0; 
+		margin: 0; 
+		display: inline-block; 
+		vertical-align: middle;
+		font-size: 1.2em;
+	}
+
+	.appNotify-p {
+		font-weight: bold;
+		font-family: helvetica, arial, sans-serif;
+		text-decoration: none;
+	}
+
+	.appNotify-p a {
+		font-weight: bold;
+		font-family: helvetica, arial, sans-serif;
+		text-decoration: none;
+	}
+
+	.appNotify-appIcon {
+		float: left;
+		vertical-align: middle;
+		margin: 0 5px 0 5px;
+	}
 	</style>
 </head>
 <body>
@@ -19,6 +52,13 @@
 		<h1>appNotify</h1>
 
 		appNotify is a simple javascript library which will add a non-obtrusive banner to the top of a webpage when browsing on a mobile device to alery the user to an available platform-specific app.
+
+		<h1>Styling</h1>
+		Style the banner and child elements with the following class definitions:
+		appNotify-banner - Banner <br />
+		appNotify-p - Banner Content <br />
+		appNotify-p a - Links on Banner <br />
+		appNotify-appIcon - Image on Banner <br />
 
 		<h1>Usage</h1>
 		To get going you will need to specify at least 1 link to an app, and preferably include an app icon too.
